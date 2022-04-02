@@ -1,24 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&display=swap');
+
+:root {
+    --light-color: #F5F2E7;
+    --dark-color: #2C3333;
+    --primary: #2666CF;
+    --secondary: #395B64;
+}
+
 html, body {
     margin: 0;
     height: 100%;
+    font-family: 'DM Sans', sans-serif;
 }
 
 body {
     font-size: 1.6rem;
     line-height: 1.5;
-    background: #1d1d1d;
+    background: var(--dark-color);
     display: block;
     min-width: 320px;
-    font-family: "Open Sans",sans-serif;
     color: #fff;
-    padding-left: 13rem;
     overflow-y: scroll;
     overflow-x: hidden;
+    -webkit-user-select:none;
+    -moz-user-select:-moz-none;
+        -ms-user-select:none;
+        user-select:none;
 }
 
+.section-home::after {
+    position: fixed;
+    display: block;
+    content: "Scroll Down";
+    font-size: 1rem;
+    right: 0;
+    bottom: 0;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+}
+
+
 .main-menu {
-    width: 13rem;
-    background-color: #181818;
+    width: 8rem;
     height: 100vh;
     position: fixed;
     lefT: 0;
@@ -42,6 +65,45 @@ body {
     margin: 0;
     padding: 0;
 }
+
+.main-menu .sidenav {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+}
+
+.main-menu .sidenav-nav {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.main-menu .sidenav-list {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 1rem 0;
+}
+
+.main-menu .sidenav-list .sidenav-link {
+    display: block;
+    width: 100%;
+    color: #ffffff33;
+    text-decoration: none;
+}
+
+.main-menu .sidenav-list .sidenav-link:hover, .sidenav-list .sidenav-link.active {
+    color: var(--light-color);
+    margin-left: 2rem;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.main-menu .sidenav-list .sidenav-link.active {
+    border-right: 3px solid var(--light-color);
+}
+
+/* HOME */
 
 .section-home {
     height: 80vh;
@@ -73,6 +135,9 @@ body {
     margin: 0;
 }
 
+
+/* Button Home */
+
 .cta {
     position: relative;
     margin: auto;
@@ -90,7 +155,7 @@ body {
     left: 0;
     display: block;
     border-radius: 50px;
-    background: #b1dae7;
+    background: var(--light-color);
     width: 45px;
     height: 45px;
     transition: all 0.3s ease;
@@ -102,7 +167,7 @@ body {
     font-size: 18px;
     font-weight: 700;
     letter-spacing: 0.05em;
-    color: #234567;
+    color: var(--primary);
    }
    
    .cta svg {
@@ -112,7 +177,7 @@ body {
     fill: none;
     stroke-linecap: round;
     stroke-linejoin: round;
-    stroke: #234567;
+    stroke: var(--primary);
     stroke-width: 2;
     transform: translateX(-5px);
     transition: all 0.3s ease;
@@ -120,7 +185,7 @@ body {
    
    .cta:hover:before {
     width: 100%;
-    background: #b1dae7;
+    background: var(--light-color);
    }
    
    .cta:hover svg {
